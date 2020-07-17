@@ -207,7 +207,7 @@ func (p *OIDCProvider) verifyGroupMembership(groups []string) error {
 	}
 
 	// Find a valid group that they are a member of
-	validGroups := strings.Split(p.Group, " ")
+	validGroups := strings.Split(p.Group, ";")
 	for _, validGroup := range validGroups {
 		if _, ok := membershipSet[validGroup]; ok {
 			return nil
